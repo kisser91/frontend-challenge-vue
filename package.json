@@ -4,19 +4,6 @@
       "@babel/preset-env"
     ]
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "vue"
-    ],
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1"
-    },
-    "transform": {
-      ".*\\.(vue)$": "vue-jest"
-    }
-  },
   "name": "frontend-junior-dev",
   "version": "1.0.0",
   "private": true,
@@ -68,27 +55,7 @@
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
-    },
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
-        ],
-        "env": {
-          "jest": true
-        }
-      },
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
-        ],
-        "env": {
-          "jest": true
-        }
-      }
-    ]
+    }
   },
   "browserslist": [
     "> 1%",
