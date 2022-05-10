@@ -2,6 +2,7 @@ import axios from "axios";
 import lastDate from "../hooks/lastDate";
 import randomColor from "../hooks/randomColor";
 import convertDate from "../hooks/convertDate";
+import pieGraphCSS from "../hooks/pieGraphCSS";
 import moment from "moment";
 
 const actions = {
@@ -49,17 +50,10 @@ const actions = {
       )
       .catch((err) => err);
 
-    let acc = 0;
-    let aux = 0;
-    const style = [];
-
-    for (let i = 0; i < data.length; i++) {
-      acc += aux;
-      aux = Math.floor((data[i].total * 100) / total);
-      style.push(`${data[i].color} 0deg ${aux + acc}%`);
-    }
-    let styleString = style.join();
-    state.commit("LOAD_REPORT_RESPONSE", { data, style: styleString });
+    state.commit("LOAD_REPORT_RESPONSE", {
+      data,
+      style: pieGraphCSS(data, total),
+    });
   },
 };
 
