@@ -1,9 +1,12 @@
-// Imports breaks the test
-const state = require("../../src/main");
+import { shallowMount } from '@vue/test-utils'
+import HelloWorld from '@/components/HelloWorld.vue'
 
-describe("test example", () => {
-  it("testing jest", () => {
-    const msg = "new message";
-    expect(msg).toEqual("new message");
-  });
-});
+describe('HelloWorld.vue', () => {
+  it('renders props.msg when passed', () => {
+    const msg = 'new message'
+    const wrapper = shallowMount(HelloWorld, {
+      propsData: { msg }
+    })
+    expect(wrapper.text()).toMatch(msg)
+  })
+})
