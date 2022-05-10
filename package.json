@@ -1,13 +1,4 @@
 {
-  "babel": {
-    "env": {
-      "test": {
-        "plugins": [
-          "@babel/plugin-transform-modules-commonjs"
-        ]
-      }
-    }
-  },
   "name": "frontend-junior-dev",
   "version": "1.0.0",
   "private": true,
