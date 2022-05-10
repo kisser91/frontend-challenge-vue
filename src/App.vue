@@ -16,7 +16,7 @@ export default {
   computed: {
     ...mapGetters(["GET_THEME"]),
   },
-  created() {
+  mounted() {
     this.USER_RESPONSE();
     this.REPORT_RESPONSE();
   },

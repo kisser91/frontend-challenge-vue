@@ -1,4 +1,8 @@
 import axios from "axios";
+import lastDate from "../hooks/lastDate";
+import randomColor from "../hooks/randomColor";
+import convertDate from "../hooks/convertDate";
+import moment from "moment";
 
 const actions = {
   THEME: (state) => {
@@ -8,9 +12,21 @@ const actions = {
     state.commit("SET_LOGIN_MENU");
   },
   USER_RESPONSE: async (state) => {
+    let aux;
     const userResponse = await axios
       .get("/api/users")
-      .then((res) => res.data.users)
+      .then((res) =>
+        res.data.users.map(
+          (el) => (
+            (aux = lastDate(el.sessions)),
+            {
+              ...el,
+              lastConnection: convertDate(aux),
+              fromNow: moment(aux).fromNow(),
+            }
+          )
+        )
+      )
       .catch((err) => err);
     state.commit("LOAD_USER_RESPONSE", userResponse);
   },
@@ -25,7 +41,7 @@ const actions = {
               (total += el.total),
               {
                 ...el,
-                color: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
+                color: randomColor(),
               }
             )
           )

@@ -33,8 +33,8 @@
             </div>
           </div>
           <div class=" col-span-2 pl-2 flex-items-center ">
-            <p class="font-bold">fecha</p>
-            <p>hace 2 dias</p>
+            <p class="font-bold">{{ user.lastConnection }}</p>
+            <p>{{ user.fromNow }}</p>
           </div>
           <h1 class=" col-span-2 flex items-center pl-2">
             {{ user.department }}
@@ -72,6 +72,5 @@ export default {
   computed: {
     ...mapGetters(["GET_USER_RESPONSE"]),
   },
-  method: {},
 };
 </script>

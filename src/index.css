@@ -40,4 +40,16 @@ body,
     font-size: 0.5rem;
     line-height: 0.75rem;
   }
+  .graph-margin-sm {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .graph-margin-md {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .graph-margin-lg {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
 }
