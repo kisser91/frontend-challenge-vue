@@ -1,4 +1,5 @@
 // Imports breaks the test
+const state = require("../../src/main");
 
 describe("test example", () => {
   it("testing jest", () => {
