@@ -39,7 +39,7 @@
       <div class="h-16 inline-flex  mt-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 ml-1 mt-1 text-gray-800 "
+          class="h-5 w-5 ml-1 mt-1 text-gray-800 dark:text-white "
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -50,14 +50,14 @@
           />
         </svg>
         <div class="flex flex-col pl-1">
-          <h1 class="text-gray-400 dark:text-gray-500">My Profile</h1>
+          <h1 class="text-gray-400 dark:text-gray-200">My Profile</h1>
           <p class="text-gray-500 dark:text-gray-400 text-xs">
             Change settings of your account
           </p>
         </div>
       </div>
       <button
-        class="text-red-600 text-semibold text-md border-t-1 inline-flex items-center pl-1 dark:border-gray-900"
+        class="text-red-500 dark:text-red-400 text-semibold text-md border-t-1 inline-flex items-center pl-1 dark:border-gray-900"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

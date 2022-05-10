@@ -1,14 +1,10 @@
 <script>
-import { mapGetters } from "vuex";
 import NavBar from "../components/NavBar.vue";
 import PieGraph from "../components/PieGraph.vue";
 import Employees from "../components/Employees.vue";
 export default {
   name: "Home",
   components: { NavBar, PieGraph, Employees },
-  computed: {
-    ...mapGetters(["GET_THEME"]),
-  },
 };
 </script>
 
