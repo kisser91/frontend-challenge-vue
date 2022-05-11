@@ -38,6 +38,7 @@
     "faker": "^5.4.0",
     "jest": "^27.0.5",
     "miragejs": "^0.1.41",
+    "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -52,7 +53,18 @@
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
-    }
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
   },
   "browserslist": [
     "> 1%",

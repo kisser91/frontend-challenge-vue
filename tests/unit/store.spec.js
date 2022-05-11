@@ -2,7 +2,7 @@ import state from "../../src/store/state";
 import mutations from "../../src/store/mutations";
 
 describe("Uninitialized Store test ", () => {
-  it("initial State test ", () => {
+  it(" initial State test ", () => {
     const initialState = {
       theme: {
         theme: "dark",
@@ -14,7 +14,7 @@ describe("Uninitialized Store test ", () => {
     };
     expect(state).toEqual(initialState);
   });
-  it("Test Theme mutation - dark to light ", () => {
+  it(" Test Theme mutation - dark to light ", () => {
     const themeLight = {
       theme: " ",
       bool: false,
@@ -24,7 +24,7 @@ describe("Uninitialized Store test ", () => {
 
     expect(state.theme).toEqual(themeLight);
   });
-  it("Test Theme mutation - light to dark ", () => {
+  it(" Test Theme mutation - light to dark ", () => {
     const stateMutated = {
       theme: {
         theme: "",
@@ -35,5 +35,23 @@ describe("Uninitialized Store test ", () => {
     mutations.SET_THEME(stateMutated);
 
     expect(state.theme).toEqual(state.theme);
+  });
+  it(" Test Menu - open to close ", () => {
+    const stateMutated = {
+      loginMenu: true,
+    };
+
+    mutations.SET_LOGIN_MENU(stateMutated);
+
+    expect(stateMutated.loginMenu).toEqual(state.loginMenu);
+  });
+  it(" Test Menu - close to open ", () => {
+    const stateMutated = {
+      loginMenu: false,
+    };
+
+    mutations.SET_LOGIN_MENU(stateMutated);
+
+    expect(stateMutated.loginMenu).toEqual(true);
   });
 });
