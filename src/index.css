@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+}
+
+@layer components {
+  .navbar {
+    background-color: #1e1add;
+  }
+  .bg-light {
+    background-color: #f7fafc;
+  }
+  .navigation-text {
+    color: #878e9c;
+  }
+  .pt-full {
+    padding-top: 100%;
+  }
+  .outer-container {
+    @apply bg-white dark:bg-gray-800 shadow-md   rounded-md col-span-1 h-full  block  relative  navigation-text font-semibold mx-2 md:mx-0;
+  }
+  .inner-container {
+    @apply absolute  w-full h-full top-0 flex flex-col space-y-4 p-5 md:p-2;
+  }
+  .border-1 {
+    border-width: 1px;
+  }
+  .border-t-1 {
+    border-top-width: 2px;
+  }
+  .text-xxs {
+    font-size: 0.5rem;
+    line-height: 0.75rem;
+  }
+  .graph-margin-sm {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .graph-margin-md {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .graph-margin-lg {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+}

@@ -1,37 +1,24 @@
 <template>
-  <div id="app" class="remove-this">
+  <div id="app" :class="GET_THEME.theme">
+    <Home />
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
+import Home from "./views/Home.vue";
 export default {
-  name: 'app',
-  components: {},
-  async mounted() {
-    // Users
-    const userResponse = await fetch('/api/users');
-    const users = await userResponse.json();
-    // Reports
-    const reportResponse = await fetch('/api/reports');
-    const reports = await reportResponse.json();
-  }
-}
+  name: "app",
+  components: { Home },
+  methods: {
+    ...mapActions(["USER_RESPONSE", "REPORT_RESPONSE"]),
+  },
+  computed: {
+    ...mapGetters(["GET_THEME"]),
+  },
+  mounted() {
+    this.USER_RESPONSE();
+    this.REPORT_RESPONSE();
+  },
+};
 </script>
-
-<style lang="postcss">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html, body, #app {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  overflow: auto;
-}
-
-.remove-this {
-  background-image: url('./assets/background.png');
-  @apply bg-contain bg-no-repeat bg-center;
-}
-</style>
