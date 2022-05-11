@@ -7,6 +7,7 @@ import getters from "./store/getters";
 import actions from "./store/actions";
 import mutations from "./store/mutations";
 import Vuex from "vuex";
+import "@babel/polyfill";
 Vue.config.productionTip = false;
 
 if (process.env.NODE_ENV === "development") makeServer();
