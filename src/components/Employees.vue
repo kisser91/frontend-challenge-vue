@@ -3,7 +3,7 @@
     <div class=" md:inner-container space-y-4 ">
       <h1 class="pl-4 align-middle mt-4 md:mt-0 md:pl-0">Employees</h1>
       <div
-        class=" border-gray-200 dark:border-gray-900 border-1  rounded-md overflow-y-auto  "
+        class=" border-gray-200 dark:border-gray-900  border-t-[2px]  rounded-b-md overflow-y-auto  "
       >
         <div
           class="inline-grid grid-cols-9 text-xxs lg:text-sm w-full h-9 items-center lg:h-14"
